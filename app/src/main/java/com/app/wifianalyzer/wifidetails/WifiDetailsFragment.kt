@@ -1,15 +1,13 @@
 package com.app.wifianalyzer.wifidetails
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import com.app.wifianalyzer.R
 import com.app.wifianalyzer.databinding.FragmentWifiDetailsBinding
-import com.app.wifianalyzer.databinding.FragmentWifiListBinding
 
 class WifiDetailsFragment : Fragment() {
 

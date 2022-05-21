@@ -1,13 +1,14 @@
 package com.app.wifianalyzer.wifilist
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.app.wifianalyzer.R
+import com.app.wifianalyzer.database.WifiDatabase
 import com.app.wifianalyzer.databinding.FragmentWifiListBinding
 
 class WifiListFragment : Fragment() {
@@ -22,13 +23,13 @@ class WifiListFragment : Fragment() {
                               savedInstanceState: Bundle?): View {
         val binding = DataBindingUtil.inflate<FragmentWifiListBinding>(
             inflater, R.layout.fragment_wifi_list, container, false);
+
+        val application = requireNotNull(this.activity).application
+        val dataSource = WifiDatabase.getInstance(application).wifiScanDao
+        val viewModelFactory = WifiListViewModelFactory(dataSource, application)
+        val viewModel = ViewModelProvider(this, viewModelFactory).get(WifiListViewModel::class.java)
+
         return binding.root
     }
-
-//    override fun onActivityCreated(savedInstanceState: Bundle?) {
-//        super.onActivityCreated(savedInstanceState)
-//        viewModel = ViewModelProvider(this).get(WifiListViewModel::class.java)
-//        // TODO: Use the ViewModel
-//    }
 
 }
