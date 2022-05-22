@@ -1,6 +1,6 @@
 package com.app.wifianalyzer.database
 
-import WifiScan
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -12,5 +12,5 @@ interface WifiScanDao {
     fun insert(scan: WifiScan)
 
     @Query("SELECT * FROM wifi_scan_results ORDER BY scan_time DESC")
-    fun getAllScans(): List<WifiScan>
+    fun getAllScans(): LiveData<List<WifiScan>>
 }

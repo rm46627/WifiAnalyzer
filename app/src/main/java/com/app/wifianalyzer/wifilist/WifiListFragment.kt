@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.app.wifianalyzer.R
 import com.app.wifianalyzer.database.WifiDatabase
@@ -28,6 +29,15 @@ class WifiListFragment : Fragment() {
         val dataSource = WifiDatabase.getInstance(application).wifiScanDao
         val viewModelFactory = WifiListViewModelFactory(dataSource, application)
         val viewModel = ViewModelProvider(this, viewModelFactory).get(WifiListViewModel::class.java)
+
+        val adapter = WifiListAdapter()
+        binding.wifiList.adapter = adapter
+
+        viewModel.wifiListHistory.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                adapter.data = it
+            }
+        })
 
         return binding.root
     }

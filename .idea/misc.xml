@@ -5,7 +5,7 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3553846153846154" />
         <entry key="app/src/main/res/layout/fragment_wifi_details.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_wifi_list.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_wifi_list.xml" value="0.33" />
         <entry key="app/src/main/res/layout/wifilist_item_view.xml" value="0.2222222222222222" />
       </map>
     </option>

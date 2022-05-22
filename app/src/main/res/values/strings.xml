@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">WifiAnalyzer</string>
+    <string name="history">History</string>
 </resources>

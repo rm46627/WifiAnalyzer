@@ -1,6 +1,5 @@
 package com.app.wifianalyzer.database
 
-import WifiScan
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
